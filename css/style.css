@@ -1,0 +1,85 @@
+:root {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.product img {
+  max-width: 100%;
+  min-width: 20rem;
+}
+
+.container {
+  margin-left: 500px;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vh;
+  background-color: #fff;
+}
+
+.txt-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.product::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  /* opacity: 0.5; */
+  mix-blend-mode: hue;
+}
+
+.product-nav {
+  position: relative;
+}
+
+.product-nav label {
+  display: inline-block;
+  width: 50px;
+  height:  50px;
+  background-color: hsl(30, 50%, 75%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.5em #fff, 0.5em 0.5em 1em -0.15em rgba(0, 0, 0, 0.25);
+}
+
+.product-nav label + label {
+  margin-left: 1.5em;
+}
+
+.product-nav > label:nth-of-type(1),
+#color-1:checked ~ .product::after {
+  background-color: hsl(30, 50%, 75%);
+}
+
+.product-nav > label:nth-of-type(2),
+#color-2:checked ~ .product::after {
+  background-color: hsl(120, 50%, 75%);
+}
+
+.product-nav > label:nth-of-type(3),
+#color-3:checked ~ .product::after {
+  background-color: hsl(210, 50%, 75%);
+}
+
+.product-nav > label:nth-of-type(4),
+#color-4:checked ~ .product::after {
+  background-color: hsl(300, 50%, 75%);
+}
+
+#color-1:checked ~ .product-nav > label:nth-of-type(1),
+#color-2:checked ~ .product-nav > label:nth-of-type(2),
+#color-3:checked ~ .product-nav > label:nth-of-type(3),
+#color-4:checked ~ .product-nav > label:nth-of-type(4) {
+  transform: scale(1.2);
+}
